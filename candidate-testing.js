@@ -21,7 +21,7 @@ function askForName() {
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   //candidateAnswer = input.question(question);
-  for (i = 0; i < questions.length; i++) {
+  for (let i = 0; i < questions.length; i++) {
     candidateAnswers.push(input.question("\n"+questions[i]+" "));
   }
 }
@@ -41,7 +41,7 @@ function gradeQuiz(candidateAnswers) {
   let grade = [];
   
   // check every answer against correct answers and record "correct" or "incorrect" in a new array
-  for (i = 0; i < correctAnswers.length; i++) {  
+  for (let i = 0; i < correctAnswers.length; i++) {  
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
       grade[i] = "Correct";      
     } else {
@@ -50,7 +50,7 @@ function gradeQuiz(candidateAnswers) {
   }
 
   // step throughddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-  for (i = 0; i < questions.length; i++) {
+  for (let i = 0; i < questions.length; i++) {
     console.log(`\n${questions[i]}\nCorrect Answer: ${correctAnswers[i]}\t\tYour Answer: ${candidateAnswers[i]}\n${grade[i]}`);
   }  
 
