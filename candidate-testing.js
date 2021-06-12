@@ -15,7 +15,7 @@ let candidateAnswers = [];
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-  candidateName = input.question("Please enter your name: ");  
+  candidateName = input.question("Candidate Name: ");  
 }
 
 function askQuestion() {
@@ -54,7 +54,7 @@ function gradeQuiz(candidateAnswers) {
   }
   */  
   
-  console.log(`Candidate Name: ${candidateName}`);  
+  //console.log(`Candidate Name: ${candidateName}`);  
   for (let i = 0; i < numberOfQuestions; i++) {
     console.log(`${i+1}) ${questions[i]}\nYour Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}\n\n`);
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
@@ -84,7 +84,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  console.log("Welcome to the quiz,", candidateName + "!");
+  //console.log("Welcome to the quiz,", candidateName + "!");
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
