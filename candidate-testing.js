@@ -38,9 +38,13 @@ function gradeQuiz(candidateAnswers) {
     console.log("Wrong!");
   }
 */
-  let grade = [];
+  let grade = 0;
+  let numberOfQuestions = questions.length;
+  let minPercentageToPass = 80;
+  let passOrFail = "";
   
   // check every answer against correct answers and record "correct" or "incorrect" in a new array
+  /*
   for (let i = 0; i < correctAnswers.length; i++) {  
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
       grade[i] = "Correct";      
@@ -48,11 +52,31 @@ function gradeQuiz(candidateAnswers) {
       grade[i] = "Incorrect";      
     }
   }
+  */  
+  
+  console.log(`Candidate Name: ${candidateName}`);  
+  for (let i = 0; i < numberOfQuestions; i++) {
+    console.log(`${i+1}) ${questions[i]}\nYour Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}\n\n`);
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
+      grade++;
+    }
+  }
+  let percentGrade = (grade / numberOfQuestions ) * 100;
+  
+  if (percentGrade >= minPercentageToPass) {
+    passOrFail = "PASSED";
+  } else {
+    passOrFail = "FAILED";
+  }
+  
+  console.log(`>>> Overall Grade: ${percentGrade}% (${grade} of ${questions.length} responses correct) <<<`);
+  console.log(`>>> Status: ${passOrFail} <<<`);
 
-  // step throughddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+  /*
   for (let i = 0; i < questions.length; i++) {
     console.log(`\n${questions[i]}\nCorrect Answer: ${correctAnswers[i]}\t\tYour Answer: ${candidateAnswers[i]}\n${grade[i]}`);
-  }  
+  }
+  */
 
   return grade;
 }
