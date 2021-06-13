@@ -61,7 +61,7 @@ function gradeQuiz(candidateAnswers) {
   }
   //let percentGrade = (grade / numberOfQuestions ) * 100;
   
-  if (percentGrade >= minPercentageToPass) {
+  if (grade >= minPercentageToPass) {
     passOrFail = "PASSED";
   } else {
     passOrFail = "FAILED";
