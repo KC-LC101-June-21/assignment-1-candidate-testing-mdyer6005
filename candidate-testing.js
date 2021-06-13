@@ -22,7 +22,7 @@ function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   //candidateAnswer = input.question(question);
   for (let i = 0; i < questions.length; i++) {
-    candidateAnswers.push(input.question("\n"+questions[i]+" "));
+    candidateAnswers.push(input.question("\n"+questions[i]+" "));    
   }
 }
 
@@ -40,6 +40,7 @@ function gradeQuiz(candidateAnswers) {
 */
   let grade = 0;
   let numberOfQuestions = questions.length;
+  let eachQuestionIsWorth = 100 / numberOfQuestions;
   let minPercentageToPass = 80;
   let passOrFail = "";
   
@@ -54,11 +55,11 @@ function gradeQuiz(candidateAnswers) {
   }
   */  
   
-  //console.log(`Candidate Name: ${candidateName}`);  
+  console.log(`Candidate Name: ${candidateName}`);  
   for (let i = 0; i < numberOfQuestions; i++) {
     console.log(`${i+1}) ${questions[i]}\nYour Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}\n\n`);
     if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
-      grade++;
+      grade += eachQuestionIsWorth;
     }
   }
   let percentGrade = (grade / numberOfQuestions ) * 100;
