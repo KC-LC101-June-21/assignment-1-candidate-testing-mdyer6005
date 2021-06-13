@@ -12,7 +12,6 @@ let questions = ["Who was the first American woman in space?", "True or false: 5
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = [];
 
-
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
   candidateName = input.question("Candidate Name: ");  
@@ -25,8 +24,6 @@ function askQuestion() {
     candidateAnswers.push(input.question("\n"+questions[i]+" "));    
   }
 }
-
-
 
 function gradeQuiz(candidateAnswers) {
 
@@ -62,7 +59,7 @@ function gradeQuiz(candidateAnswers) {
       grade += eachQuestionIsWorth;
     }
   }
-  let percentGrade = (grade / numberOfQuestions ) * 100;
+  //let percentGrade = (grade / numberOfQuestions ) * 100;
   
   if (percentGrade >= minPercentageToPass) {
     passOrFail = "PASSED";
@@ -70,15 +67,13 @@ function gradeQuiz(candidateAnswers) {
     passOrFail = "FAILED";
   }
   
-  console.log(`>>> Overall Grade: ${percentGrade}% (${grade} of ${questions.length} responses correct) <<<`);
+  console.log(`>>> Overall Grade: ${grade}% (${grade / eachQuestionIsWorth} of ${questions.length} responses correct) <<<`);
   console.log(`>>> Status: ${passOrFail} <<<`);
-
   /*
   for (let i = 0; i < questions.length; i++) {
     console.log(`\n${questions[i]}\nCorrect Answer: ${correctAnswers[i]}\t\tYour Answer: ${candidateAnswers[i]}\n${grade[i]}`);
   }
   */
-
   return grade;
 }
 
